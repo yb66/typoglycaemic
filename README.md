@@ -13,7 +13,9 @@ According to a researcher at Cambridge University, it doesn't matter in what ord
 STR
 
 puts Typoglycaemic(words)
-```ruby
+```
+
+The output:
 
 > Accorindg to a reeascrehr at Cmbairdge Uivnesrtiy, it deso'nt matter in what order the letters in a word are, the only ipmortnat tinhg is that the fisrt and last letter be at the rgiht pacle. The rset can be a toatl mses and you can still raed it wtiouht poblerm. Tihs is bceasue the huamn mnid does not read eevry letter by iteslf but the wrod as a wolhe.
 
@@ -22,12 +24,17 @@ str = "A doctor has admitted the manslaughter of a teenage cancer patient who di
 puts Typoglycaemic(str)
 ```
 
+The output:
+
 > A docotr has amditted the mnsalugather of a teengae cnaecr ptiaent who died after a hspotail drug blnduer.
+
 
 ```ruby
 str = "In the Victorian era, a lovely emerald green, partially formulated from arsenic, was used in fabrics and popular floral headdresses."
 puts Typoglycaemic(str)
 ```
+
+The output:
 
 > In the Vitorcain era, a lovley emreald green, patirally fromlauetd form asenric, was uesd in fbarics and poplaur folarl headdersses.
 
