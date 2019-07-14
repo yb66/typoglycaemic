@@ -12,7 +12,7 @@ words = <<~STR
 According to a researcher at Cambridge University, it doesn't matter in what order the letters in a word are, the only important thing is that the first and last letter be at the right place. The rest can be a total mess and you can still read it without problem. This is because the human mind does not read every letter by itself but the word as a whole.
 STR
 
-puts Typoglycaemic(words)
+puts Typoglycaemic(words).jumbled
 ```
 
 The output:
@@ -21,7 +21,7 @@ The output:
 
 ```ruby
 str = "A doctor has admitted the manslaughter of a teenage cancer patient who died after a hospital drug blunder."
-puts Typoglycaemic(str)
+puts Typoglycaemic(str).jumbled
 ```
 
 The output:
@@ -31,12 +31,19 @@ The output:
 
 ```ruby
 str = "In the Victorian era, a lovely emerald green, partially formulated from arsenic, was used in fabrics and popular floral headdresses."
-puts Typoglycaemic(str)
+puts Typoglycaemic(str).jumbled
 ```
 
 The output:
 
 > In the Vitorcain era, a lovley emreald green, patirally fromlauetd form asenric, was uesd in fbarics and poplaur folarl headdersses.
+
+The original is around if needed:
+
+```ruby
+tc = Typoglycaemic(str)
+tc.original
+```
 
 
 ## The rules

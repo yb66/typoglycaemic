@@ -16,13 +16,19 @@ class Typoglycaemic
   #
   # @param [String] original
   def initialize original
-    @original = original
-    @chance = DEFAULT_CHANCE
-    @typoglycaemized = self.class.typoglycaemize @original, @chance
+    if original.respond_to?(:typoglycaemized)
+      @original = original.original
+      @typoglycaemized = original.typoglycaemized
+    else
+      @original = original
+      @chance = DEFAULT_CHANCE
+      @typoglycaemized = self.class.typoglycaemize @original, @chance
+    end
+    @original.freeze and @typoglycaemized.freeze and @frozen = true
   end
 
   # @return [String]
-  attr_reader :typoglycaemized
+  attr_reader :typoglycaemized, :original, :frozen
 
   # because that's a mouthful
   alias_method :jumbled, :typoglycaemized
@@ -105,7 +111,8 @@ end
 
 
 # For convenience.
-# @param [String] original
+# @param [Typoglycaemic,String] original
+# @return [Typoglycaemic]
 def Typoglycaemic(original)
-  Typoglycaemic.new(original).typoglycaemized
+  Typoglycaemic.new(original)
 end

@@ -10,7 +10,8 @@ class TypoTest < Minitest::Test
   	STR
   	  .strip
     @first_and_last =  @words.split(" ").map{|word| [ word[0], word.match(/\w[[:punct:]]?$/)[0]  ] }
-    @output = Typoglycaemic(@words)
+    @tc = Typoglycaemic(@words)
+    @output = @tc.jumbled
   end
 
   def test_start_and_end_are_unchanged
@@ -54,4 +55,23 @@ class TypoTest < Minitest::Test
     assert @output.split(" ").zip(@words.split(" ")).all?{|(a,b)| a.size == b.size }
   end
 
+
+  def test_the_original_is_unchanged
+    assert @tc.original == @words
+  end
+
+
+  def test_original_is_preserved_if_already_typoglycaemized
+    assert Typoglycaemic(@tc).original == @words
+  end
+
+
+  def test_jumbled_is_preserved_if_already_typoglycaemized
+    assert Typoglycaemic(@tc).jumbled == @output
+  end
+
+
+  def test_it_says_it_is_frozen_and_it_is
+    assert @tc.frozen && @tc.original.frozen? && @tc.jumbled.frozen?
+  end
 end
