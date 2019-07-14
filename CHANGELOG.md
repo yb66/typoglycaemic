@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 14th of July 2019
+
+- Error in gemspec, fixed.
+
 ## [0.1.0] - 14th of July 2019
 
 - The `Typoglycaemic(str)` method now returns the object instead of the jumbled string.
