@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
     spec.metadata = {
       "homepage_uri"    => spec.homepage,
       "source_code_uri" => "https://github.com/yb66/typoglycaemic",
-      "changelog_uri"]  => "https://github.com/yb66/typoglycaemic/blob/master/CHANGELOG.md",
+      "changelog_uri"   => "https://github.com/yb66/typoglycaemic/blob/master/CHANGELOG.md",
     }
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
